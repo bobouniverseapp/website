@@ -8,13 +8,13 @@
 <body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.7; color: #222;">
   <h1>Bobo Universe</h1>
   <h2>Privacy Policy</h2>
-  <p><em>Last updated: September 1, 2026</em></p>
+  <p><em>Last updated: October 2, 2026</em></p>
 
   <p>
     This Privacy Policy explains how <b>Bobo Universe</b> handles information in
     applications we publish, including <b>BoboStop</b>, <b>BoboKnock</b>,
-    <b>BoboPop</b>, and other Bobo Universe products such as BoboTalk and
-    BoboMusic.
+    <b>BoboPop</b>, <b>Bobo Snake &amp; Ladder</b>, and other Bobo Universe
+    products such as BoboTalk and BoboMusic.
   </p>
 
   <p>
@@ -50,6 +50,7 @@
     <li>provide core app features (such as accounts, settings, or gameplay);</li>
     <li>remember preferences you choose inside the app;</li>
     <li>keep local progress or session state where the app is designed to do so;</li>
+    <li>provide online or multiplayer features where a product offers them;</li>
     <li>respond to privacy or support questions you send to us by email.</li>
   </ul>
 
@@ -95,8 +96,9 @@
 
   <h2>Advertising and Google AdMob</h2>
   <p>
-    Certain Bobo Universe games, including <b>BoboPop</b> and <b>BoboKnock</b>
-    where applicable, use <b>Google AdMob</b> to display ads.
+    Certain Bobo Universe games, including <b>BoboPop</b>, <b>BoboKnock</b>,
+    and <b>Bobo Snake &amp; Ladder</b> where applicable, use
+    <b>Google AdMob</b> to display ads.
   </p>
   <p>
     When AdMob is used, the Google Mobile Ads SDK may automatically collect or
@@ -141,9 +143,12 @@
     so we cannot promise absolute security.
   </p>
   <p>
-    For apps that store account credentials locally, passwords are not stored in
-    plain text in the current local account system; a hashed credential is stored
-    on the device instead.
+    For products that store account credentials locally (for example,
+    <b>BoboKnock</b> V1), passwords are not stored in plain text in the current
+    local account system; a hashed credential is stored on the device instead.
+    That local-hash description applies only to those local-account products. It
+    does <b>not</b> describe <b>Bobo Snake &amp; Ladder</b>, which uses a cloud
+    authentication service rather than a locally stored password hash.
   </p>
 
   <h2>Product Details: BoboStop</h2>
@@ -263,6 +268,96 @@
     <li>Device vibration/haptic functionality may be used when enabled.</li>
   </ul>
 
+  <h2>Product Details: Bobo Snake &amp; Ladder</h2>
+  <p>
+    <b>Bobo Snake &amp; Ladder</b> is a Bobo Universe mobile game. In the current
+    V1 implementation, players create or sign in to a Bobo Snake &amp; Ladder
+    account to use online features. Product-specific practices are described
+    below. This section does not change the BoboStop, BoboKnock, or BoboPop
+    descriptions above.
+  </p>
+
+  <p><b>Account / profile:</b></p>
+  <ul>
+    <li>Email and password authentication is provided through Supabase.</li>
+    <li>Players choose a nickname and receive a generated Player ID.</li>
+    <li>Account and profile data are stored so the game can provide account and multiplayer features.</li>
+    <li>The device stores a session/refresh token so the player can remain signed in.</li>
+    <li>A password-reset email may be sent when the player uses Forgot Password.</li>
+    <li>The password itself is not stored as a local hashed credential on the device.</li>
+  </ul>
+
+  <p><b>Online / social:</b></p>
+  <ul>
+    <li>Friends and friend requests.</li>
+    <li>Game invitations.</li>
+    <li>Online/Home presence.</li>
+    <li>Multiplayer rooms.</li>
+    <li>Match statistics.</li>
+    <li>A global leaderboard derived from eligible profile/match data.</li>
+    <li>A selected dice preference, where applicable.</li>
+    <li>A Render/WebSocket relay is used for online multiplayer communication (for example rooms, presence, and invites). It is not used as the Bobo account database.</li>
+  </ul>
+
+  <p><b>Local device data:</b></p>
+  <ul>
+    <li>Lives/quota (device-local; Lives are not stored as a cloud purchase entitlement).</li>
+    <li>Settings such as Music, SFX, and Vibration.</li>
+    <li>Local dice/cache data (premium dice ownership is re-checked with Google Play when the store is available).</li>
+    <li>Other local state needed for the app session.</li>
+  </ul>
+  <p>
+    Uninstalling the app or clearing app data may remove this locally stored
+    information. Uninstalling the app does <b>not</b> by itself delete the
+    Bobo Snake &amp; Ladder cloud account.
+  </p>
+
+  <p><b>Purchases:</b></p>
+  <p>
+    Optional dice styles may be purchased through <b>Google Play</b>. Google
+    Play handles purchase and payment transactions. Bobo Universe does not
+    collect or store payment-card details. Lives are <b>not</b> an in-app
+    purchase.
+  </p>
+
+  <p><b>Advertising (Google AdMob) and privacy options:</b></p>
+  <p>
+    Bobo Snake &amp; Ladder uses <b>Google AdMob</b> for banner ads,
+    interstitial ads, rewarded ads, and App Open ads. Google/AdMob may process
+    information as described in the Advertising and Google AdMob section above.
+    Where applicable, the app exposes Google User Messaging Platform (UMP)
+    Privacy Options in Settings. Bobo Universe does not claim to personally
+    collect advertising-related information outside of what Google/AdMob
+    processes through its SDK.
+  </p>
+
+  <p><b>Device features:</b></p>
+  <ul>
+    <li>Device vibration/haptic functionality may be used for Snake, Ladder, and Step On / Timpa events when Vibration is enabled in Settings.</li>
+  </ul>
+
+  <p><b>Features Bobo Snake &amp; Ladder does not currently use:</b></p>
+  <ul>
+    <li>subscriptions;</li>
+    <li>Buy Lives or other Lives in-app purchases;</li>
+    <li>separate Bobo Universe analytics SDKs;</li>
+    <li>separate Bobo Universe crash-reporting services;</li>
+    <li>other Bobo Universe tracking SDKs beyond the advertising SDK described above.</li>
+  </ul>
+
+  <p><b>Delete Account:</b></p>
+  <p>
+    Bobo Snake &amp; Ladder includes in-app account deletion from
+    <b>Profile → DELETE ACCOUNT</b>, followed by confirmation steps. Successful
+    deletion removes the Bobo Snake &amp; Ladder cloud account and associated
+    server-side profile, friend, and match-stat data covered by that deletion
+    flow. Uninstalling the app does <b>not</b> delete the cloud account.
+    Deleting the Bobo account does <b>not</b> delete Google Play purchase or
+    payment transaction records, which are managed by Google. A public
+    deletion page is also available at
+    <a href="../bobosnakeandladder-delete-account/">Bobo Snake &amp; Ladder — Delete Account</a>.
+  </p>
+
   <h2>Changes to This Privacy Policy</h2>
   <p>
     We may update this Privacy Policy from time to time. When we do, we will
@@ -273,7 +368,7 @@
   <h2>Contact Us</h2>
   <p>
     For privacy questions about Bobo Universe apps, including BoboStop,
-    BoboKnock, and BoboPop, contact:
+    BoboKnock, BoboPop, and Bobo Snake &amp; Ladder, contact:
   </p>
   <p>
     <b>bobouniversereview@gmail.com</b>
@@ -283,6 +378,7 @@
 
   <p>
     <a href="../">Home</a> |
+    <a href="../terms/">Terms of Service</a> |
     <a href="../support/">Support</a>
   </p>
 
