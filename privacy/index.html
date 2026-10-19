@@ -8,7 +8,7 @@
 <body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.7; color: #222;">
   <h1>Bobo Universe</h1>
   <h2>Privacy Policy</h2>
-  <p><em>Last updated: October 2, 2026</em></p>
+  <p><em>Last updated: October 19, 2026</em></p>
 
   <p>
     This Privacy Policy explains how <b>Bobo Universe</b> handles information in
@@ -287,6 +287,14 @@
     <li>The password itself is not stored as a local hashed credential on the device.</li>
   </ul>
 
+  <p><b>Lives:</b></p>
+  <ul>
+    <li>For a signed-in account, the Lives balance is stored with that account in Supabase. The stored record includes the current balance, the UTC day used for the daily reset, regeneration timing, and the match or reward id already applied so the same online match or reward is not applied twice.</li>
+    <li>The game sends the signed-in account, an action (refresh, consume, or reward), and a match or reward id. It does not send the device clock or a starting balance. Supabase decides the balance.</li>
+    <li>The device may keep a display copy of the last balance. That copy does not grant or refill Lives.</li>
+    <li>Lives are not a purchase and are not a payment entitlement.</li>
+  </ul>
+
   <p><b>Online / social:</b></p>
   <ul>
     <li>Friends and friend requests.</li>
@@ -301,15 +309,15 @@
 
   <p><b>Local device data:</b></p>
   <ul>
-    <li>Lives/quota (device-local; Lives are not stored as a cloud purchase entitlement).</li>
     <li>Settings such as Music, SFX, and Vibration.</li>
     <li>Local dice/cache data (premium dice ownership is re-checked with Google Play when the store is available).</li>
     <li>Other local state needed for the app session.</li>
   </ul>
   <p>
     Uninstalling the app or clearing app data may remove this locally stored
-    information. Uninstalling the app does <b>not</b> by itself delete the
-    Bobo Snake &amp; Ladder cloud account.
+    information, including the on-device Lives display copy. Uninstalling the
+    app does <b>not</b> by itself delete the Bobo Snake &amp; Ladder cloud
+    account or the Lives balance stored with that account.
   </p>
 
   <p><b>Purchases:</b></p>
@@ -350,8 +358,8 @@
     Bobo Snake &amp; Ladder includes in-app account deletion from
     <b>Profile → DELETE ACCOUNT</b>, followed by confirmation steps. Successful
     deletion removes the Bobo Snake &amp; Ladder cloud account and associated
-    server-side profile, friend, and match-stat data covered by that deletion
-    flow. Uninstalling the app does <b>not</b> delete the cloud account.
+    server-side profile, Lives, friend, and match-stat data covered by that
+    deletion flow. Uninstalling the app does <b>not</b> delete the cloud account.
     Deleting the Bobo account does <b>not</b> delete Google Play purchase or
     payment transaction records, which are managed by Google. A public
     deletion page is also available at
