@@ -8,7 +8,7 @@
 <body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.7; color: #222;">
   <h1>Bobo Universe</h1>
   <h2>Privacy Policy</h2>
-  <p><em>Last updated: November 6, 2026</em></p>
+  <p><em>Last updated: November 7, 2026</em></p>
 
   <p>
     This Privacy Policy explains how <b>Bobo Universe</b> handles information in
@@ -90,15 +90,16 @@
     This page does not claim that every Bobo Universe app uses advertising,
     analytics, crash-reporting, or tracking SDKs. Where a product does not
     currently implement those services, they are not listed for that product.
-    Advertising practices for games that use Google AdMob are described in the
-    section below.
+    Advertising practices for products that use Google AdMob are described in the
+    section below and, for BoboMusic, in the BoboMusic section.
   </p>
 
   <h2>Advertising and Google AdMob</h2>
   <p>
-    Certain Bobo Universe games, including <b>BoboPop</b>, <b>BoboKnock</b>,
-    and <b>Bobo Snake &amp; Ladder</b> where applicable, use
-    <b>Google AdMob</b> to display ads.
+    Certain Bobo Universe apps use <b>Google AdMob</b> to display ads.
+    Those apps include <b>BoboPop</b>, <b>BoboKnock</b>, and
+    <b>Bobo Snake &amp; Ladder</b> where applicable, and <b>BoboMusic</b>
+    as described in the BoboMusic section.
   </p>
   <p>
     When AdMob is used, the Google Mobile Ads SDK may automatically collect or
@@ -411,14 +412,66 @@
     <li>VIP entitlement and trial history are associated with the BoboMusic account.</li>
     <li>A random install ID is used for the one-active-VIP-device rule. The same install ID may also be used to limit referral abuse.</li>
     <li>BoboMusic does not collect an IMEI, MEID, device serial, or SIM identifier for this feature.</li>
+    <li>Reviewer access is a server-controlled VIP entitlement. It is not a Google Play subscription and does not create a purchase record.</li>
     <li>The BoboMusic release being prepared can offer VIP through Google Play. If a subscription is offered, Google Play processes the payment, and BoboMusic does not collect payment-card details. A paid subscription is not described here as an already-active purchase program.</li>
   </ul>
 
+  <p><b>Listening activity:</b></p>
+  <p>
+    When a person is signed in, BoboMusic may store a running total of listening
+    time on that account. Listening by a guest is not stored in the BoboMusic
+    account database.
+  </p>
+
+  <p><b>Advertising (Google AdMob):</b></p>
+  <p>
+    The BoboMusic Android app includes the Google Mobile Ads / AdMob SDK.
+    A person using BoboMusic without VIP may be shown:
+  </p>
+  <ul>
+    <li>an App Open advertisement;</li>
+    <li>a banner on Home and on Search;</li>
+    <li>a Native Advanced advertisement in search results, labeled as an advertisement and not presented as a song;</li>
+    <li>a listening interstitial during a playback break.</li>
+  </ul>
+  <p>
+    BoboMusic VIP, including reviewer access, is not shown these advertisements.
+    Advertisements are not shown during Identify Song, Phone Pocket, or
+    lock-resume playback. BoboMusic does not use rewarded advertisements.
+  </p>
+  <p>
+    When an advertisement is requested, the Google Mobile Ads SDK may process
+    an advertising identifier and advertising-related information such as ad
+    interactions, device information, and diagnostics, as described in the
+    Advertising and Google AdMob section above. BoboMusic does not sell that
+    information and does not operate a separate advertising backend. Google
+    processes it under Google's policies. BoboMusic does not currently show a
+    consent choice for advertising.
+  </p>
+
+  <p><b>Installation measurement (Meta App Events):</b></p>
+  <p>
+    The BoboMusic Android app includes Meta App Events to measure app installs
+    and app opens, and to support advertising attribution for Facebook and
+    Instagram. These events can be sent without a BoboMusic account.
+    BoboMusic does not use Meta for Facebook Login, content sharing, Audience
+    Network, custom events, or automatic purchase and subscription logging.
+  </p>
+  <p>
+    Collection of the Android advertising identifier by Meta is turned
+    <b>off</b>. BoboMusic does not yet show a consent choice for that
+    collection, and the advertising identifier is not sent to Meta unless a
+    required consent choice exists and is granted. Install and app-open events
+    may still be sent without that identifier. Meta processes event information
+    under the
+    <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.
+  </p>
+
   <p><b>Features BoboMusic does not currently use:</b></p>
   <ul>
-    <li>the Google Mobile Ads / AdMob SDK;</li>
     <li>offline music downloads;</li>
-    <li>separate Bobo Universe analytics SDKs;</li>
+    <li>rewarded advertisements;</li>
+    <li>a consent screen for advertising or for Meta advertising-identifier collection;</li>
     <li>separate Bobo Universe crash-reporting services.</li>
   </ul>
 
@@ -435,10 +488,16 @@
     Playlists, search history, audio files, and Phone Pocket settings stored
     only on the device remain on that device. Backup snapshots and share codes
     that are not linked to the account may remain usable by anyone who has the
-    code. BoboMusic may retain the minimum hashed trial and purchase records
-    needed to prevent a repeated trial or reuse of the same purchase. Referral
-    device-lock records may also remain without the account name, email, or
-    password.
+    code. When the deleted account had used a trial or had a purchase record,
+    BoboMusic may keep a limited retention record: a hash of the email address,
+    the trial-used flag and trial dates when those exist, a hash of the purchase
+    token when one exists, related subscription status and entitlement end when
+    those exist, and the deletion time. That record does not include the
+    plaintext email address, name, password, or listening total. It is kept to
+    prevent a repeated trial or reuse of the same purchase, and it can be copied
+    onto a later account created with the same email without restoring VIP.
+    Referral device-lock records may also remain without the account name, email,
+    or password.
   </p>
   <p>
     Deleting a BoboMusic account does <b>not</b> cancel Google Play billing.
