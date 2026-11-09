@@ -235,20 +235,60 @@ main {
 .status,
 .action {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: var(--frame-width);
-  aspect-ratio: var(--frame-ratio);
+  gap: 8px;
 }
 
 .status { grid-area: status; }
 .action { grid-area: action; }
 
+.slot {
+  width: 100%;
+  aspect-ratio: var(--frame-ratio);
+}
+
 .status img,
-.action img,
+.slot,
+.slot img,
 .store {
   width: 100%;
+}
+
+.slot img,
+.store {
   height: 100%;
+}
+
+.status img {
+  height: auto;
+  aspect-ratio: var(--frame-ratio);
+}
+
+.delete-account,
+.delete-spacer {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.delete-account {
+  color: var(--gold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.delete-account:hover { color: #ffe3a3; }
+
+.delete-account:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.delete-spacer {
+  visibility: hidden;
 }
 
 .store {
@@ -315,9 +355,12 @@ footer {
   }
 
   .status,
-  .action {
+  .action,
+  .slot {
     width: min(280px, 100%);
   }
+
+  .delete-spacer { display: none; }
 
   .description { max-width: 42rem; }
 }
