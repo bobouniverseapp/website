@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "configuration_name": "bobo-universe-global-banner",
+  "configuration_revision": 4,
+  "stage": "artwork-v2-activation-draft_DO_NOT_POINT_CLIENTS_HERE",
+  "control_url": "https://bobouniverseapp.github.io/website/global-banner/config-v1.json",
+  "refresh_after_seconds": 3600,
+  "rotation": {
+    "interval_seconds": 8,
+    "transition_ms": 450,
+    "skip_identical_slots": true
+  },
+  "badge": {
+    "label": "NEW",
+    "always_on": true,
+    "placement": "top_left",
+    "animation": "soft_blink",
+    "period_ms": 1800,
+    "applies_to": "global_banner_only",
+    "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-new-badge-v1.png",
+    "render_mode": "separate_image_overlay",
+    "width_fraction": 0.15,
+    "offset_x_fraction": 0.015,
+    "offset_y_fraction": 0.02
+  },
+  "slots": [
+    {
+      "id": "slot_1",
+      "type": "bobo_universe",
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-universe-global-v2.png",
+      "asset_ready": true,
+      "target_url": "https://bobouniverseapp.github.io/website/",
+      "alt_text": "Bobo Universe — Discover more product with us"
+    },
+    {
+      "id": "slot_2",
+      "type": "product_promotion",
+      "product_id": "bobostop",
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobostop-banner-v2.png",
+      "asset_ready": true,
+      "target_url": "https://bobouniverseapp.github.io/website/products/bobostop/",
+      "alt_text": "Discover BoboStop"
+    }
+  ],
+  "allowed_link_hosts": [
+    "bobouniverseapp.github.io",
+    "play.google.com"
+  ],
+  "client_fallback": {
+    "type": "bobo_universe",
+    "target_url": "https://bobouniverseapp.github.io/website/"
+  },
+  "notes": "DRAFT ONLY: no production client should fetch this file. Upload and verify all three versioned image assets BEFORE porting these fields into config-v1.json. Do not remove self_promotion_policy. Badge is NOT baked into global artwork.",
+  "self_promotion_policy": {
+    "enabled": true,
+    "app_identity_key": "client_app_id",
+    "compare_slot": "slot_2",
+    "promotion_product_field": "product_id",
+    "on_match": "replace_slot_2_with_slot_1",
+    "suppress_rotation_when_effective_slots_identical": true
+  },
+  "banner_artwork": {
+    "preferred_pixel_width": 1536,
+    "preferred_pixel_height": 512,
+    "aspect_ratio": "3:1",
+    "fit": "contain",
+    "background": "transparent"
+  }
+}
