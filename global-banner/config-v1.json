@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "configuration_name": "bobo-universe-global-banner",
-  "configuration_revision": 3,
-  "stage": "pre-integration",
+  "configuration_revision": 4,
+  "stage": "integration",
   "control_url": "https://bobouniverseapp.github.io/website/global-banner/config-v1.json",
   "refresh_after_seconds": 3600,
   "rotation": {
@@ -16,13 +16,18 @@
     "placement": "top_left",
     "animation": "soft_blink",
     "period_ms": 1800,
-    "applies_to": "global_banner_only"
+    "applies_to": "global_banner_only",
+    "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-new-badge-v1.png",
+    "render_mode": "separate_image_overlay",
+    "width_fraction": 0.15,
+    "offset_x_fraction": 0.015,
+    "offset_y_fraction": 0.02
   },
   "slots": [
     {
       "id": "slot_1",
       "type": "bobo_universe",
-      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-universe-global.png",
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-universe-global-v2.png",
       "asset_ready": true,
       "target_url": "https://bobouniverseapp.github.io/website/",
       "alt_text": "Bobo Universe — Discover more product with us"
@@ -31,7 +36,7 @@
       "id": "slot_2",
       "type": "product_promotion",
       "product_id": "bobostop",
-      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobostop-banner.png",
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobostop-banner-v2.png",
       "asset_ready": true,
       "target_url": "https://bobouniverseapp.github.io/website/products/bobostop/",
       "alt_text": "Discover BoboStop"
@@ -45,7 +50,7 @@
     "type": "bobo_universe",
     "target_url": "https://bobouniverseapp.github.io/website/"
   },
-  "notes": "Global V1 policy: Slot 1 always Bobo Universe. Slot 2 currently promotes BoboStop. Every client must provide its own stable client_app_id; when it equals the Slot 2 product_id, render Slot 1 (Bobo Universe) in both effective slots and suppress redundant rotation. Promotion selection stays centrally managed; no per-product remote manifest. NEW soft blink applies to the Bobo Universe banner. Never use public JSON for secrets.",
+  "notes": "Global V1 policy: Slot 1 always Bobo Universe. Slot 2 currently promotes BoboStop. Every client must provide its own stable client_app_id; when it equals the Slot 2 product_id, render Slot 1 (Bobo Universe) in both effective slots and suppress redundant rotation. Promotion selection stays centrally managed; no per-product remote manifest. The NEW badge is a separate overlay on the badge-free Bobo Universe artwork and soft-blinks only there. Never use public JSON for secrets.",
   "self_promotion_policy": {
     "enabled": true,
     "app_identity_key": "client_app_id",
@@ -53,5 +58,12 @@
     "promotion_product_field": "product_id",
     "on_match": "replace_slot_2_with_slot_1",
     "suppress_rotation_when_effective_slots_identical": true
+  },
+  "banner_artwork": {
+    "preferred_pixel_width": 1536,
+    "preferred_pixel_height": 512,
+    "aspect_ratio": "3:1",
+    "fit": "contain",
+    "background": "transparent"
   }
 }
