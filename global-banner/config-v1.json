@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "configuration_name": "bobo-universe-global-banner",
-  "configuration_revision": 1,
+  "configuration_revision": 2,
   "stage": "pre-integration",
   "control_url": "https://bobouniverseapp.github.io/website/global-banner/config-v1.json",
   "refresh_after_seconds": 3600,
@@ -29,11 +29,12 @@
     },
     {
       "id": "slot_2",
-      "type": "bobo_universe",
-      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-universe-global.png",
+      "type": "product_promotion",
+      "product_id": "bobostop",
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobostop-banner.png",
       "asset_ready": true,
-      "target_url": "https://bobouniverseapp.github.io/website/",
-      "alt_text": "Bobo Universe — Discover more product with us"
+      "target_url": "https://bobouniverseapp.github.io/website/products/bobostop/",
+      "alt_text": "Discover BoboStop"
     }
   ],
   "allowed_link_hosts": [
