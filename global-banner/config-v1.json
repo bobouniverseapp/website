@@ -22,16 +22,16 @@
     {
       "id": "slot_1",
       "type": "bobo_universe",
-      "image_url": "https://bobouniverseapp.github.io/website/assets/logo.png",
-      "asset_ready": false,
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-universe-global.png",
+      "asset_ready": true,
       "target_url": "https://bobouniverseapp.github.io/website/",
       "alt_text": "Bobo Universe — Discover more product with us"
     },
     {
       "id": "slot_2",
       "type": "bobo_universe",
-      "image_url": "https://bobouniverseapp.github.io/website/assets/logo.png",
-      "asset_ready": false,
+      "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-universe-global.png",
+      "asset_ready": true,
       "target_url": "https://bobouniverseapp.github.io/website/",
       "alt_text": "Bobo Universe — Discover more product with us"
     }
@@ -44,5 +44,5 @@
     "type": "bobo_universe",
     "target_url": "https://bobouniverseapp.github.io/website/"
   },
-  "notes": "Foundation only. The existing logo.png is an intentionally temporary asset URL; replace with the approved banner artwork before app integration. Badge animation should be native where practical. Do not use this remote JSON for security-sensitive settings."
+  "notes": "Foundation only. Approved banner artwork is published for both slots. Badge animation should be native where practical. Do not use this remote JSON for security-sensitive settings."
 }

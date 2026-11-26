@@ -1,7 +1,7 @@
 # Bobo Universe Global Banner — Control Center (V1)
 
 ## Status
-Control manifest prepared. Product integration is NOT deployed. Both slots currently point to a **temporary logo placeholder**; do not treat this as final banner art.
+Control manifest prepared. Product integration is NOT deployed. Both slots use the approved static banner at `assets/banners/bobo-universe-global.png`. The NEW badge stays a native soft blink; the published image itself is static.
 
 ## Live manifest
 `https://bobouniverseapp.github.io/website/global-banner/config-v1.json`
@@ -37,4 +37,4 @@ All current and future Bobo Universe products should fetch the same HTTPS JSON. 
 - Use a new asset filename rather than overwriting a cached image to avoid users seeing old creative.
 
 ## Notes
-`asset_ready: false` is intentional now. No product should integrate this unfinished manifest as production-ready.
+`asset_ready: true` means the approved artwork URL is in place. Product integration is still a later step, so no app should treat this manifest as a finished client feature yet.
