@@ -1,7 +1,7 @@
 # Bobo Universe Global Banner — Control Center (V1)
 
 ## Status
-Control manifest prepared. Product integration is NOT deployed. Both slots use the approved static banner at `assets/banners/bobo-universe-global.png`. The NEW badge stays a native soft blink; the published image itself is static.
+Control manifest prepared. Product integration is NOT deployed. Slot 1 is the Bobo Universe banner with the native soft-blinking NEW badge. Slot 2 is a temporary BoboStop promotion using `assets/banners/bobostop-banner.png`. Replace Slot 2 by editing this manifest; no app rebuild is required.
 
 ## Live manifest
 `https://bobouniverseapp.github.io/website/global-banner/config-v1.json`

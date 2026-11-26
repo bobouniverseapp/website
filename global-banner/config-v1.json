@@ -45,5 +45,5 @@
     "type": "bobo_universe",
     "target_url": "https://bobouniverseapp.github.io/website/"
   },
-  "notes": "Foundation only. Approved banner artwork is published for both slots. Badge animation should be native where practical. Do not use this remote JSON for security-sensitive settings."
+  "notes": "Initial test promotion. Slot 2 is BoboStop and can be replaced by editing this manifest only. Badge animation should be native where practical and applies to the Bobo Universe banner only. Do not use this remote JSON for security-sensitive settings."
 }
