@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "configuration_name": "bobo-universe-global-banner",
-  "configuration_revision": 2,
+  "configuration_revision": 3,
   "stage": "pre-integration",
   "control_url": "https://bobouniverseapp.github.io/website/global-banner/config-v1.json",
   "refresh_after_seconds": 3600,
@@ -45,5 +45,13 @@
     "type": "bobo_universe",
     "target_url": "https://bobouniverseapp.github.io/website/"
   },
-  "notes": "Initial test promotion. Slot 2 is BoboStop and can be replaced by editing this manifest only. Badge animation should be native where practical and applies to the Bobo Universe banner only. Do not use this remote JSON for security-sensitive settings."
+  "notes": "Global V1 policy: Slot 1 always Bobo Universe. Slot 2 currently promotes BoboStop. Every client must provide its own stable client_app_id; when it equals the Slot 2 product_id, render Slot 1 (Bobo Universe) in both effective slots and suppress redundant rotation. Promotion selection stays centrally managed; no per-product remote manifest. NEW soft blink applies to the Bobo Universe banner. Never use public JSON for secrets.",
+  "self_promotion_policy": {
+    "enabled": true,
+    "app_identity_key": "client_app_id",
+    "compare_slot": "slot_2",
+    "promotion_product_field": "product_id",
+    "on_match": "replace_slot_2_with_slot_1",
+    "suppress_rotation_when_effective_slots_identical": true
+  }
 }
