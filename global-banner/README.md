@@ -3,6 +3,14 @@
 ## Status
 Control manifest prepared. Product integration is NOT deployed. Slot 1 is the Bobo Universe banner with the native soft-blinking NEW badge. Slot 2 is a temporary BoboStop promotion using `assets/banners/bobostop-banner.png`. Replace Slot 2 by editing this manifest; no app rebuild is required.
 
+## Artwork standard (HQ decision)
+
+**Canonical main banners: 3:1 landscape, preferred 1536 × 512 PNG.** The Bobo Universe main image must be **badge-free**; NEW is a **separate transparent overlay**, animated by the client using manifest settings. This removes letterboxing in 3:1 placements and prevents permanent/double NEW badges. The initial BoboStop promotion should also have a 3:1 version.
+
+Full rollout spec: [ARTWORK_STANDARD_V1.md](ARTWORK_STANDARD_V1.md).
+
+**Important:** The current live manifest still references the old artwork. Do not switch its URLs until versioned new assets have been published and the BoboMusic client supports the overlay contract. The implementation tests reported by BoboMusic are not physical-device verification.
+
 ## Live manifest
 `https://bobouniverseapp.github.io/website/global-banner/config-v1.json`
 
