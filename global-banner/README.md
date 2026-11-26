@@ -11,6 +11,15 @@ Full rollout spec: [ARTWORK_STANDARD_V1.md](ARTWORK_STANDARD_V1.md).
 
 **Important:** The current live manifest still references the old artwork. Do not switch its URLs until versioned new assets have been published and the BoboMusic client supports the overlay contract. The implementation tests reported by BoboMusic are not physical-device verification.
 
+## Approved asset migration — staged, NOT activated
+
+The two original approved transparent 2048 × 682 banners were supplied by HQ. No redesign is required. A badge-free 1536 × 512 Bobo Universe image, a 1536 × 512 BoboStop image, and a separate NEW badge have been prepared for upload.
+
+- [Exact asset upload/activation instructions](ASSET_UPLOAD_V2.md)
+- [Pending JSON draft — not a live endpoint](config-v2.pending.json)
+
+**Do not activate the draft or redirect clients to it until all three PNG files are uploaded and verified on GitHub Pages.** The live `config-v1.json` deliberately remains unchanged to avoid broken-image outages.
+
 ## Live manifest
 `https://bobouniverseapp.github.io/website/global-banner/config-v1.json`
 
