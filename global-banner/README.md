@@ -8,6 +8,19 @@ Control manifest prepared. Product integration is NOT deployed. Slot 1 is the Bo
 
 All current and future Bobo Universe products should fetch the same HTTPS JSON. GitHub Pages is the source of banner content. No additional Firebase project is needed for this feature.
 
+## Universal self-promotion exclusion (configuration revision 3)
+
+**Mandatory client behavior:** Each app/game must supply its own stable `client_app_id` (for example `bobomusic`, `bobostop`, `bobopop`, `boboknock`, `bobosnakeandladder`). This identifier is not downloaded from the manifest, since the client must identify itself independently.
+
+- Load the global manifest once from the shared URL; do **not** create per-product manifests.
+- If `self_promotion_policy.enabled` is true and `slots[1].product_id === client_app_id`, resolve the **effective** Slot 2 as a copy of Slot 1 (Bobo Universe) without mutating the server manifest.
+- The BoboStop campaign stays in the shared manifest for all other products; BoboStop itself only displays the Bobo Universe banner.
+- When the two effective slots have the same image URL and target URL, show one stationary Bobo Universe banner. Do not run a redundant slide/fade or alternate identical images.
+- If Slot 2 later promotes BoboMusic, BoboMusic itself displays Bobo Universe only, while other products promote BoboMusic, without a new binary release.
+- Do not add an exception to hide the entire promotional area. Keep the global banner visible.
+- Test identity matching for all five existing product IDs, plus unmatched or missing IDs. Missing/unrecognized IDs must not silently act as another product; default to normal configured Slot 2 unless an application-specific safe fallback is required.
+- Applying this new rule requires clients to implement it. Updating the JSON alone does not modify existing app binaries.
+
 ## Rules
 - Exactly two logical slots displayed in **one** visible banner area.
 - Slot 1 stays `bobo_universe`. Slot 2 may be `bobo_universe` or a product promotion.
@@ -23,12 +36,14 @@ All current and future Bobo Universe products should fetch the same HTTPS JSON. 
 - Honor reduced-motion/accessibility preferences. Keep a nonanimated badge as a fallback.
 - Do not require sign-in to load a banner or allow banner errors to block an app launch.
 
-## Required work before product integration
-1. Upload the approved high-resolution Bobo Universe banner PNG to `assets/banners/bobo-universe-global.png`.
-2. Change both `slots[].image_url` to the new published asset URL, change `asset_ready` to `true`, and remove the temporary-asset note. Keep the two slots identical by default.
-3. Verify image and manifest URLs over HTTPS in an ordinary browser after GitHub Pages deployment.
-4. Test the remote update by temporarily setting Slot 2 to a real product banner hosted on the website (such as `assets/banners/bobomusic-banner.png`), confirm the JSON change, then restore Slot 2 to Bobo Universe.
-5. Only then issue implementation contracts to the Expo and Godot product rooms.
+## Integration verification checklist
+
+1. Verify that both approved banner image URLs and the JSON manifest resolve successfully from GitHub Pages.
+2. Integrate the manifest parser, cache, fallback, rotation, NEW badge behavior, and universal self-promotion exclusion in the pilot client (BoboMusic).
+3. Check BoboMusic renders Bobo Universe + BoboStop; BoboStop renders Bobo Universe only, with no duplicate rotation.
+4. Test an alternate promoted product by changing Slot 2 in the global manifest, confirming self-exclusion follows the new promoted product, then restore the desired promotion.
+5. Test offline and malformed-manifest fallback before release.
+6. Reuse the same protocol in each Godot or React Native product, avoiding unrelated feature modifications.
 
 ## Changing promotions later
 - Change Slot 2 `image_url`, `target_url`, `type`, and `alt_text` only.
@@ -37,4 +52,4 @@ All current and future Bobo Universe products should fetch the same HTTPS JSON. 
 - Use a new asset filename rather than overwriting a cached image to avoid users seeing old creative.
 
 ## Notes
-`asset_ready: true` means the approved artwork URL is in place. Product integration is still a later step, so no app should treat this manifest as a finished client feature yet.
+`asset_ready: true` means the approved artwork URL is in place. The global manifest declares the self-promotion rule; each client must implement it before users see the behavior. Changes to client logic require an app update, while changes to Slot 2 image/URL/product_id after that do not.
