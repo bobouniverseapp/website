@@ -17,7 +17,7 @@
 - **NEW badge:** a separate transparent PNG overlay asset, consistently drawn above the base banner by each client.
 - The badge overlay is visible *only* when the effective banner is the Bobo Universe global banner, including the self-promotion-exclusion case.
 - HQ owns badge appearance and placement. Clients must not independently redesign or add a second badge.
-- Anchor at the top-left inside the banner art's bounds with a proportional inset; keep sizing proportional to the displayed artwork. Final percentage coordinates and badge size must be verified against approved assets and published as a shared layout spec or manifest fields before integration.
+- Anchor the NEW overlay to the **upper-left corner of the orange paw tile itself**, overlapping the paw artwork within the fitted 3:1 image (NOT the far top-left corner of the banner container). Manifest revision 5 specifies `badge.placement = paw_top_left_overlay`, `badge.position_reference = fitted_banner_image`, `badge.width_fraction = 0.12`, `badge.offset_x_fraction = 0.135`, and `badge.offset_y_fraction = 0.055`. These values are fractions of the final rendered image rectangle and must scale with it. Ensure the badge is within visible bounds and no parent clips it.
 - Use manifest animation settings: currently `soft_blink`, period **1800 ms**. Animate only overlay opacity, e.g. subtle alpha pulse rather than flashing the entire banner. Keep the base banner stationary; obey reduced-motion preferences.
 - If the badge overlay fails to load, show the static base banner without duplicates. Never block the app.
 
@@ -54,3 +54,7 @@
 ## Known limitation
 
 The BoboMusic report identifies the current global art as 661 × 396 (~1.67:1) against its 1024 × 341 (~3:1) placement. HQ has not independently decoded the published image pixels in this session. Treat those exact source dimensions as reported by BoboMusic and verify during artwork export.
+
+## 6. Godot client migration (Snake & Ladder issue found Nov 27)
+
+The existing `scripts/home/global_banner_badge.gd` still tries to split a red/painted badge out of the old banner image. The current global artwork is **badge-free**, so image extraction returns no NEW layer. The new `badge.image_url` must be parsed, downloaded/cached and displayed as a **distinct transparent overlay**, not extracted from the base image. Place it using the live fractional coordinates relative to the *fitted artwork rectangle*. Use the same overlay positioning for current and transition/previous layers. The default 3:1 image-fit rectangle should not be confused with the entire screen or parent canvas. Never modify multiplayer logic to fix this purely visual issue.
