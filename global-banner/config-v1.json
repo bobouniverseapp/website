@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "configuration_name": "bobo-universe-global-banner",
-  "configuration_revision": 6,
+  "configuration_revision": 7,
   "stage": "integration",
   "control_url": "https://bobouniverseapp.github.io/website/global-banner/config-v1.json",
   "refresh_after_seconds": 3600,
@@ -19,7 +19,7 @@
     "applies_to": "global_banner_only",
     "image_url": "https://bobouniverseapp.github.io/website/assets/banners/bobo-new-badge-v1.png",
     "render_mode": "separate_image_overlay",
-    "width_fraction": 0.12,
+    "width_fraction": 0.24,
     "offset_x_fraction": 0.113,
     "offset_y_fraction": 0.033,
     "position_reference": "fitted_banner_image",
@@ -52,7 +52,7 @@
     "type": "bobo_universe",
     "target_url": "https://bobouniverseapp.github.io/website/"
   },
-  "notes": "Global V1: NEW is a separate transparent overlay on the upper-left corner of the paw tile WITHIN the Bobo Universe artwork. Coordinates are relative to the displayed/fitted 3:1 banner image, not the outer slot/container; width=12%, x=11.3%, y=3.3%. Offsets compensate for transparent padding in bobo-new-badge-v1.png so its visible upper-left edge aligns near x=13.5%, y=5.5% of the artwork. The badge must not be clipped or duplicated. All existing self-promotion and 2-slot rotation rules remain.",
+  "notes": "Global V1: NEW is a separate transparent overlay on the upper-left corner of the paw tile WITHIN the Bobo Universe artwork. Coordinates are relative to the displayed/fitted 3:1 banner image, not the outer slot/container; width=24%, x=11.3%, y=3.3%. Offsets compensate for transparent padding in bobo-new-badge-v1.png with the existing overlay origin retained for the enlarged badge. The badge must not be clipped or duplicated. All existing self-promotion and 2-slot rotation rules remain.",
   "self_promotion_policy": {
     "enabled": true,
     "app_identity_key": "client_app_id",
