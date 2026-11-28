@@ -13,7 +13,7 @@
   "badge": {
     "label": "NEW",
     "always_on": true,
-    "placement": "paw_top_left_overlay",
+    "placement": "top_left",
     "animation": "soft_blink",
     "period_ms": 1800,
     "applies_to": "global_banner_only",
@@ -22,7 +22,8 @@
     "width_fraction": 0.12,
     "offset_x_fraction": 0.135,
     "offset_y_fraction": 0.055,
-    "position_reference": "fitted_banner_image"
+    "position_reference": "fitted_banner_image",
+    "anchor_target": "paw_tile_upper_left"
   },
   "slots": [
     {
